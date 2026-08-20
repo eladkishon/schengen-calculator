@@ -1,0 +1,20 @@
+{
+  "name": "schengen-calculator",
+  "version": "1.0.0",
+  "description": "Rolling-window (Schengen 90/180) and per-entry visa day counting. Zero dependencies.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run"
+  },
+  "keywords": ["schengen", "schengen-calculator", "90/180", "visa", "visa-calculator",
+               "travel", "digital-nomad", "immigration", "day-counter", "border"],
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/eladkishon/schengen-calculator.git" },
+  "homepage": "https://nomadpoint.app",
+  "devDependencies": { "typescript": "^5.6.0", "vitest": "^2.1.0" }
+}
