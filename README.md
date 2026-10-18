@@ -24,6 +24,28 @@ result.mustLeaveBy; // the date you have to be out by
 result.entries;     // continuous presences, after merging
 ```
 
+## Use it from an AI agent (MCP)
+
+The package is also an MCP server. Add it to Claude Desktop, Claude Code, Cursor or any MCP client:
+
+```json
+{
+  "mcpServers": {
+    "schengen": { "command": "npx", "args": ["-y", "github:eladkishon/schengen-calculator"] }
+  }
+}
+```
+
+Tools:
+
+- `calculate_schengen_days` counts days used and left under the 90/180 rule. Runs locally.
+- `check_visa_requirement` returns the entry type and allowed stay for a passport and destination.
+- `create_trip_plan` saves a planned itinerary and returns a link the traveller opens to keep it in [NomadPoint](https://nomadpoint.app).
+
+The last two call NomadPoint's public server, which needs no account or key. To skip the install,
+point a client that speaks Streamable HTTP straight at
+`https://gxhdcvoveufbkthhendf.supabase.co/functions/v1/mcp-public` (registry name `app.nomadpoint/travel-facts`).
+
 ## Why this exists
 
 Counting days sounds like subtraction and isn't. These are the cases a home-made calculator gets
